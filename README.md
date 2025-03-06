@@ -5,8 +5,11 @@ output:
 ---
 # Testing High-Dimensional Regression Coefficients in Linear Models
 
-Assembled code for paper submitted to Annals of Statistics
+Assembled code for Zhao et al (2024) published in the Annals of Statistics
 
+Paper citation: Alex Zhao. Changcheng Li. Runze Li. Zhe Zhang. "Testing high-dimensional regression coefficients in linear models." Ann. Statist. 52 (5) 2034 - 2058, October 2024. https://doi.org/10.1214/24-AOS2420 
+
+Open access link: https://scholarsphere.psu.edu/resources/231ddcf5-36b8-40bf-b08a-d453b00aaf25
 
 ## 1. Path setup and data source
       Path setup: open the `AOS_LREL_Code.Rproj` file, which will make sure that you are in the correct relative working directory.
