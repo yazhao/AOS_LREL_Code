@@ -368,7 +368,7 @@ calculate_statistic_new <- function(z, x, y, kn, alpha, Sigma = NULL, T0 = FALSE
   alphatzizjt2alpha_sum_ineqj = sum(all_alphatz * t(all_alphatz * zjtzi_sum))
   
   ## Final \hat{\tr(\Omega^2)} to be used in variance
-  tr.omega.hat.sq.known = 1/(n*(n-1)) * zjtzi_sum_ineqj_sq + sum(diag((1/(n*(n-1)))^2 * zizjt_sum_ineqj %*% zizjt_sum_ineqj)) + (2*kn)/(n*(n-1)) * alphatzizjt2alpha_sum_ineqj - t(alpha) %*% ((1/(n*(n-1)))^2 * zizjt_sum_ineqj %*% zizjt_sum_ineqj) %*% alpha + kn^2 * (t(alpha) %*% sigmaz.hat %*% alpha)^2
+  tr.omega.hat.sq.known = 1/(n*(n-1)) * zjtzi_sum_ineqj_sq + sum(diag((1/(n*(n-1)))^2 * zizjt_sum_ineqj %*% zizjt_sum_ineqj)) + (2*kn)/(n*(n-1)) * alphatzizjt2alpha_sum_ineqj -  (2*kn)/(n*(n-1)) * t(alpha) %*% ((1/(n*(n-1)))^2 * zizjt_sum_ineqj %*% zizjt_sum_ineqj) %*% alpha + kn^2 * (t(alpha) %*% sigmaz.hat %*% alpha)^2
   
   ### Parts for calculating the variance under the unknown mean case
   ## \hat{\Sigma_z}^2
@@ -385,7 +385,7 @@ calculate_statistic_new <- function(z, x, y, kn, alpha, Sigma = NULL, T0 = FALSE
   alphatzizjt2alpha_sum_ineqj.unknown = sum(all_alphatz.unknown * t(all_alphatz.unknown * zjtzi_sum.unknown))
   
   ## Final \hat{\tr(\Omega^2)} to be used in variance
-  tr.omega.hat.sq.unknown = 1/(n*(n-1)) * zjtzi_sum_ineqj_sq.unknown + sum(diag((1/(n*(n-1)))^2 * zizjt_sum_ineqj.unknown %*% zizjt_sum_ineqj.unknown)) + (2*kn)/(n*(n-1)) * alphatzizjt2alpha_sum_ineqj.unknown - t(alpha) %*% ((1/(n*(n-1)))^2 * zizjt_sum_ineqj.unknown %*% zizjt_sum_ineqj.unknown) %*% alpha + kn^2 * (t(alpha) %*% sigmaz.hat %*% alpha)^2
+  tr.omega.hat.sq.unknown = 1/(n*(n-1)) * zjtzi_sum_ineqj_sq.unknown + sum(diag((1/(n*(n-1)))^2 * zizjt_sum_ineqj.unknown %*% zizjt_sum_ineqj.unknown)) + (2*kn)/(n*(n-1)) * alphatzizjt2alpha_sum_ineqj.unknown -  (2*kn)/(n*(n-1)) * t(alpha) %*% ((1/(n*(n-1)))^2 * zizjt_sum_ineqj.unknown %*% zizjt_sum_ineqj.unknown) %*% alpha + kn^2 * (t(alpha) %*% sigmaz.hat %*% alpha)^2
   
   ## This section below I can't get to work just yet so we're using a simpler method for now
   # ## for tr(\hat{\Sigma}_z^2)
